@@ -1,0 +1,447 @@
+/* общий код */
+*{
+    font-family: 'USSR Stencil';
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+	margin: 0;
+	padding: 0;
+    transition: .18s;
+    color: #6A9955;
+}
+
+html{
+    user-select: none;
+    font-size: 16px;
+    color: #CCC;
+    background-color: #252526;
+    /* background-image: url(images/sound.gif);
+    background-attachment: fixed;
+    background-size: 100%; */
+}
+/* end общий код */
+
+/* шапка */
+header{
+    overflow: auto;
+	display: flex;
+	flex-wrap: wrap;
+	width: 80%;
+    margin: 5px auto 0 auto;
+    padding: 10px;
+    border-bottom: 2px ridge #333;
+    box-shadow: 0px -5px 5px -5px #000;
+    background-color: #1E1E1E;
+}
+
+header img{
+    box-shadow: 0px 0px 2px 0px #000;
+}
+
+header nav{
+    margin: auto auto auto 25px;
+    overflow: auto;
+	display: flex;
+	flex-wrap: nowrap;
+    flex-direction: row;
+}
+header nav a{
+    margin: auto 10px auto 10px;
+    padding: 10px 15px 10px 15px;
+    border-radius: 2px;
+    border-top: 2px ridge #333;
+    border-bottom: 2px groove #333;
+    box-shadow: 0px 0px 3px 0px #000;
+    color:#D4D4D4;
+    text-shadow: 1px 1px #252526;
+    background: linear-gradient(#333, #252526, #333);
+}
+header nav a:hover{
+    box-shadow: 0px 6px 0px -4px #578044, 0px -6px 0px -4px #578044 ;
+    background: linear-gradient(#578044, #252526, #252526, #578044) ;
+}
+header nav a:focus{
+    border-top: 3px ridge #333;
+    border-bottom: 3px groove #333;
+    box-shadow: 0px 10px 0px -4px #578044, 0px -10px 0px -4px #578044;
+}
+
+.search_field{
+    margin: auto 15px auto 0;
+    min-width: 380px;
+}
+.search_field form{
+    display: flex;
+    justify-content: right;
+    flex-direction: row;
+}
+
+input[type=text]{
+    text-align:right;
+    border: none;
+    width: 200px;
+    height: 30px;
+    padding-right: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    border-top: 2px groove #333;
+    border-bottom: 2px ridge #333;
+    border-right: 2px groove #333;
+    box-shadow: 0px 0px 3px 0px #000;
+    color:#D4D4D4;
+    background: linear-gradient(to right, #252526, #333);
+}
+input[type=text]::placeholder{
+    color:#d4d4d469;
+}
+input[type=text]:hover{
+    width: 300px;
+    border-left: 2px solid #7F0000;
+}
+input[type=text]:focus{
+    width: 340px;
+    border-left: 1px solid #7F0000;
+}
+input[type=text]:-webkit-autofill{
+    -webkit-text-fill-color: #578044;
+    box-shadow: inset 0 0 0 50px #333, 0px 0px 3px 0px #000;
+    border-left: 1px solid #578044;
+}
+
+input[type=submit]{
+    border: none;
+    width: 70px;
+    font-weight: 600;
+    font-size: 16px;
+    border-top: 2px groove #333;
+    border-bottom: 2px ridge #333;
+    border-left: 2px ridge #333;
+    box-shadow: 0px 0px 3px 0px #000;
+    color: #D4D4D4;
+    background: linear-gradient(#578044, #252526, #578044);
+}
+input[type=submit]:hover{
+    box-shadow: 0px 6px 0px -4px #578044, 0px -6px 0px -4px #578044;
+}
+input[type=submit]:focus{
+    border-top: 3px groove #333;
+    border-bottom: 3px ridge #333;
+    box-shadow: 0px 8px 0px -4px #578044, 0px -8px 0px -4px #578044;
+}
+/* end шапка */
+
+/* тело */
+body {
+    /* overflow: hidden; */
+    height: 100%;
+}
+.container{
+	display: flex;
+	flex-wrap: nowrap;
+    flex-direction: row;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto 0 auto;
+    padding: 10px 10px 40px 10px;
+    background: linear-gradient(to right,#1e1e1ea9, #1e1e1eb0);
+}
+
+.sidebar{
+    width: 20%;
+    min-width: 235px;
+    padding: 10px;
+    box-shadow: 2px 0px 2px -2px #000;
+}
+
+.sidebar section{
+    margin: 0 0 20px 0;
+    padding: 10px;
+    box-shadow: 0px 0px 4px 0px #000;
+}
+
+.lib{
+    flex-direction: row;
+    justify-content: center !important;
+    width: 100%;
+    height: 40px;
+    padding: 0 !important;
+}
+
+.section_library{
+    text-align: left;
+    display: block;
+    height: 100%;
+    margin: auto !important;
+    padding: 9px 0 9px 15px;
+    border-top: 2px ridge #333;
+    border-bottom: 2px groove #333;
+    color:#D4D4D4;
+    text-shadow: 1px 1px #252526;
+}
+.section_library i{
+    margin-right: 15px;
+    font-size: 18px;
+    color: #D4D4D4;
+}
+.section_library:hover{
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+    box-shadow: 0px 6px 0px -4px #578044, 0px -6px 0px -4px #578044;
+    background: linear-gradient(#578044, #252526, #252526, #578044);
+}
+.section_library:focus{
+    border-top: 3px ridge #333;
+    border-bottom: 3px groove #333;
+    box-shadow: 0px 10px 0px -4px #578044, 0px -10px 0px -4px #578044;
+}
+
+.playlists h1, .userslist h1{
+    color: #578044;
+}
+
+.sct_cla1, .sct_cla2{
+    overflow: auto;
+    max-height: 200px;
+    margin-left: 10px;
+}
+.sct_cla1 a, .sct_cla2 a{
+    color: #D4D4D4;
+}
+.sct_cla1 a:hover, .sct_cla2 a:hover{
+    color: #7F0000;
+}
+
+.main{
+    width:100%;
+    max-width: 80%;
+    min-width: 10%;
+    padding: 10px;
+}
+
+.section_trackslist{
+    text-shadow: 2px 2px #000;
+    padding-bottom: 15px;
+    color: #D4D4D4;
+}
+.sct_clb1{
+    overflow: auto;
+    height: 640px;
+    margin-bottom: 7%;
+}
+::-webkit-scrollbar{
+    width: 5px;
+    background-color: rgba(0, 0, 0, 0);
+    border-right: 2px groove #333;
+}
+::-webkit-scrollbar-thumb{
+    border-left: 2px groove #578044;
+}
+::-webkit-scrollbar-thumb:active{
+    border-left: 23px groove #578044;
+}
+
+.mprname{
+    text-align: left;
+    width: 95%;
+    margin: 12px 20px 0 10px;
+    padding: 10px 0 10px 20px;
+    border-width: 1px;
+    box-shadow: 0px 0px 5px 0px #000;
+    background-color: #57804400;
+}
+.mprname:hover{
+    width: 96%;
+    box-shadow:14px 0px 0px 0px #578044;
+}
+/* end тело */
+
+/* подвал */
+footer{
+    position: fixed;
+	display: flex;
+	flex-wrap: wrap;
+    flex-direction: row;
+	width: 80%;
+    margin: auto 10% 0 10%;
+    padding: 10px;
+    bottom: 0;
+    border-top: 2px groove #333;
+    box-shadow: 0px 0px 5px 0px #000;
+    background-color: #1E1E1E;
+}
+
+footer p{
+    margin: 0 auto 0 auto;
+}
+/* плеер */
+audio{
+    width: 100%;
+    border-radius: 30px;
+    filter: sepia(20%) saturate(5%) grayscale(0) contrast(98%) invert(90%);
+}
+/* end подвал */
+
+/* about-контент */
+.about-cont{
+    flex-direction: column;
+    padding-bottom: 100%;
+}
+.about-cont a, .about-cont span{
+    color: #D4D4D4;
+}
+.about-cont a:hover, .about-cont span:hover{
+    color: #7F0000;
+}
+.about-text{
+    color: #D4D4D4;
+    text-align: justify;
+    width: 600px;
+}
+.about-gl{
+    color: #D4D4D4;
+    text-align: right;
+    width: 600px;
+}
+/* end about-контент */
+
+/* bcc контент */
+.bcc-cont{
+    height: 100%;
+}
+.backconnect{
+    transition: 1s;
+    justify-content: center;
+    text-align: center;
+    margin: 35px auto 35px auto;
+    padding: 10px;
+    background: linear-gradient(to right, #57804400, #252526, #252526, #252526, #57804400);
+    box-shadow: -40px 0px 1px -22px #252526, 40px 0px 1px -22px #252526;
+}
+.backconnect:hover{
+    transition: 0.3s;
+    box-shadow: -280px 0px 71px -22px #252526, 280px 0px 71px -22px #252526;
+}
+.backconnect label{
+    font-size: 20px;
+}
+.bcc-cont form{
+    height: 100%;
+    margin: 10% auto 10% auto;
+}
+.bcc-cont input[type=text], .bcc-cont textarea, .bcc-cont input[type=email]{
+    text-align:left;
+    border: none;
+    min-width: 300px;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    padding-left: 4px;
+    font-weight: 600;
+    font-size: 18px;
+    box-shadow: 0px 0px 3px 0px #000;
+    color:#D4D4D4;
+    background: linear-gradient(to right, #252526, #333);
+}
+.bcc-cont input[type=text]::placeholder{
+    color:#d4d4d469;
+}
+.bcc-cont textarea{
+    resize: horizontal;
+    transition: 0s;
+    height: 300px;
+    max-width: 440px;
+}
+.bcc-cont input[type=text]:hover, .bcc-cont textarea:hover, .bcc-cont input[type=email]:hover{
+    box-shadow: 0px 0px 5px 0px #000;
+}
+.bcc-cont input[type=text]:-webkit-autofill, .bcc-cont textarea:-webkit-autofill, .bcc-cont input[type=email]:-webkit-autofill{
+    -webkit-text-fill-color: #578044;
+    box-shadow: inset 0 0 0 50px #333, 0px 0px 5px 0px #000, -16px 0px 0px -8px #456636, -16px 0px 5px -8px #000;
+}
+
+.bcc-cont input[type=submit]{
+    border: none;
+    width: 100%;
+    height: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    border-top: 2px groove #333;
+    border-bottom: 2px ridge #333;
+    box-shadow: 0px 0px 3px 0px #000;
+    color: #D4D4D4;
+    background: linear-gradient(#578044, #252526, #578044);
+}
+.bcc-cont input[type=submit]:hover{
+    box-shadow: 0px 6px 0px -4px #578044, 0px -6px 0px -4px #578044;
+}
+.bcc-cont input[type=submit]:focus{
+    border-top: 3px groove #333;
+    border-bottom: 3px ridge #333;
+    box-shadow: 0px 8px 0px -4px #578044, 0px -8px 0px -4px #578044;
+}
+/* end bcc контент */
+
+/* lib контент */
+.li_name{
+    margin: 5px 0 0 0;
+    padding: 10px;
+    border-left: 2px groove #7F0000;
+    box-shadow: 0px 0px 3px 0px #000;
+}
+.li_name p{
+    color: #D4D4D4;
+}
+.li_name a{
+    margin-left: 30px;
+}
+.li_name a:hover{
+    color: #7F0000;
+}
+/* end lib контент */
+
+/* formreq контент */
+.forml p{padding: 10px 0 0 30px; color: #D4D4D4;}
+.forml a{padding: 10px 0 0 30px;}
+.forml a:hover{color: #7F0000;}
+/* end formreq контент */
+
+/* mp3list контент */
+.link{
+    width: 82%;
+    margin: auto 10px;
+    padding: 10px 15px;
+    border-radius: 2px;
+    border-top: 2px ridge #333;
+    border-bottom: 2px groove #333;
+    box-shadow: 0px 0px 3px 0px #000;
+    color:#D4D4D4;
+    text-align: left;
+    text-shadow: 1px 1px #252526;
+    background: linear-gradient(#333, #252526, #333);
+}
+.link:hover{
+    box-shadow: 0px 6px 0px -4px #578044;
+    background: linear-gradient(#252526, #252526, #578044);
+    width: 85%;
+}
+.link:focus{
+    border-top: 3px ridge #333;
+    border-bottom: 3px groove #333;
+    box-shadow: 0px 10px 0px -4px #578044;
+}
+.backdnl{
+    color:#D4D4D4;
+}
+.backdnl:hover{
+    color: #7F0000;
+}
+/* end mp3list контент */
+
+
+/* адаптация */
+
+/* а нет пока адаптации */
+/* вообще нет */
+/* иди своей дорогой, странник */
+
+/* end адаптация */
