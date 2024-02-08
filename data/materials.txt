@@ -1,0 +1,2 @@
+учебник php ООП - https://code.mu/ru/php/book/oop
+учебник php PDO - https://prowebmastering.ru/php-pdo-start.html
