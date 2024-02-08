@@ -1,0 +1,146 @@
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    user-select: none;
+    font-size: 1em;
+    transition: .12s;
+    -webkit-user-drag: none;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar{
+    width: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    border-right: 2px groove #333;
+}
+html{
+    overflow: scroll;
+    background-position: block;
+    color: white;
+    background-color: #252526;
+}
+a, #content0 button{
+    text-align: center;
+    color: #6A9955;
+}
+#content0 button{
+    background-color: rgba(8, 17, 8, 0.37);
+    border: none;
+    width: 100%;
+    margin: 0.2em 0;
+}
+a p, #content0 button{
+    justify-content: center;
+    padding: 1em;
+    background-color: rgba(8, 17, 8, 0.37);
+    user-select: text;
+}
+a p:hover, #content0 button:hover{
+    color: black;
+    background-color: darkred;
+}
+a p:active, #content0 button:active{
+    color: white;
+    background-color: darkred;
+}
+h3{
+    color: white;
+    background-color: #0a0a0e42;
+    padding: 1em;
+}
+h3:hover{
+    background-color: darkred;
+}
+h3:active{
+    background-color: #1a030842;
+}
+section{
+    background-color: #0e0a0b42;
+    padding: 0.1em 0.6em;
+    margin: 0.4em 0;
+}
+#found{
+    color: grey;
+    font-size: 0.7em;
+}
+#content0,#content1,#content2,#content3{
+    display: none;
+    max-height: 20em;
+    margin: 1em;
+    border-left: 1px solid #6A9955;
+    border-right: 1px solid #6A9955;
+    padding: 0 1em;
+}
+#content0 a, #content2 a{
+    text-align: left;
+}
+#upload{
+    display: none;
+}
+#upload .form-group{
+    padding: 2em 0;
+    margin: 0 auto;
+}
+#upload input[type=file],input[type=submit]{
+    outline:0;
+    opacity:0;
+    pointer-events:none;
+    user-select:none;
+}
+#upload label{
+    border:2px dashed rgba(8, 17, 8, 1);
+    border-radius:5px;
+    padding:1.2em;
+    transition:border 300ms ease;
+    margin-right: 1em;
+}
+#upload label .title{
+    color:#6A9955;
+    transition:200ms color;
+}
+#upload label:hover{
+    border:2px solid darkred;
+}
+#upload label:hover .title{
+    color:darkred;
+}
+.load-data{
+    justify-content: center;
+    padding: 1em;
+    background-color: rgba(8, 17, 8, 0.37);
+    color: white;
+}
+.load-data a{
+    font-size: 1.6em;
+}
+video{
+    height: 100%;
+    width: 100%;
+}
+.player{
+    height: 520px;
+}
+#link_load, #del_load{
+    display: none;
+    margin-bottom: 0.8em;
+    
+}
+#link_enter_field, #del_enter_field, #link_enter, #del_enter{
+    border: 0.1em solid rgba(8, 17, 8, 1);
+    border-radius: 0.1em;
+    font-size: 1em;
+    padding: 0.5em;
+    height: 2.2em;
+    background-color: #252526;
+}
+#link_enter_field, #del_enter_field{
+    color: white;
+}
+#link_enter:hover, #del_enter:hover{
+    color: black;
+    background-color: darkred;
+}
+#link_enter:active, #del_enter:active{
+    color: #fff;
+    background-color: darkred;
+}

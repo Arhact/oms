@@ -1,0 +1,385 @@
+/* используемые цвета
+    1. #fff         --белый
+    2. #252526      --чёрный
+    3. #6A9955      --зелёный
+    4. #8b0000      --красный
+    5. #696969      --серый
+
+    100vw - на всю ширину
+    100vh - на всю высоту
+*/
+/* подключения */
+@font-face {
+    font-family: 'Conthrax';
+    src: local('conthrax sb'), local('conthrax-sb'), url('/../../fonts/conthrax-sb.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+/* общие переменные */
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    user-select: none;
+    font-size: 1em;
+    font-family: 'Conthrax', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: .12s;
+    color: #252526;
+}
+html{
+    min-height: 100vh;
+    display: list-item;
+    background-position-x: center;
+    background-repeat: no-repeat;
+}
+
+/* скролл-бар */
+::-webkit-scrollbar{
+    background-color: #fff;
+    border: 1px solid #252526;
+    width: 1em;
+}
+::-webkit-scrollbar-thumb{
+    box-shadow: 0 2px 0 #fff, 0 3px 0 #252526, 0 -2px 0 #fff, 0 -3px 0 #252526;
+}
+::-webkit-scrollbar-thumb:hover{
+    box-shadow: 0 4px 0 #fff, 0 5px 0 #252526, 0 -4px 0 #fff, 0 -5px 0 #252526;
+}
+::-webkit-scrollbar-thumb:active{
+    border-left: 1px solid #8b0000;
+    border-right: 1px solid #8b0000;
+    box-shadow: 0 10px 0 #fff, 0 11px 0 #252526, 0 -10px 0 #fff, 0 -11px 0 #252526;
+}
+::-webkit-scrollbar-button:single-button:vertical{
+    border: 1px solid #252526;
+}
+::-webkit-scrollbar-button:single-button:vertical:hover{
+    box-shadow: 0 2px 0 #fff, 0 3px 0 #252526, 0 -2px 0 #fff, 0 -3px 0 #252526;
+}
+
+/* общие параметры для шапки и подвала */
+header, footer{
+    margin: 0.2em;
+    padding: 0.2em;
+    z-index:15;
+    transition: .0s;
+    position: fixed;
+    border: 1px dashed #252526;
+    background-color: #fff;
+}
+
+/* шапка */
+header{
+    top: 0;
+    margin-top: 0;
+    width: calc(100% - 1.4em);
+    display: inline-flex;
+
+}
+header #logo_1ink a{
+    padding: 0;
+    margin: 0.5em;
+}
+header #logo_1ink img{
+    width: 3em;
+    height: 3em;
+    margin: 0.5em 0.5em 0.4em 0.5em;
+    box-shadow: 0 0 1px #252526;
+}
+header nav{
+    margin: auto auto auto 0.2em;
+    display: inline-flexbox;
+}
+header #fi1e_find{
+    right: 0;
+    margin: auto 1em auto auto;
+    display: inline-flex;
+}
+
+#fi1e_de1 #form_group{
+    display: flex;
+    width: 100%;
+}
+#fi1e_de1 #submit_button{
+    cursor: pointer;
+    height: 2em;
+    padding: 0.4em;
+    border: 1px solid #252526;
+}
+#fi1e_de1 #submit_button:hover{
+    box-shadow: 1px 0 0 #fff, 2px 0 0 #252526, -1px 0 0 #fff, -2px 0 0 #252526;
+}
+#fi1e_de1 #submit_button:active{
+    box-shadow: 
+    2px 1px 0 #fff, 3px 2px 0 #252526, 
+    -2px -1px 0 #fff, -3px -2px 0 #252526, 
+    2px 1px 0 #fff, 3px 2px 0 #252526, 
+    -2px -1px 0 #fff, -3px -2px 0 #252526;
+}
+#fi1e_de1 input[type='text']{
+    width: 100%;
+    height: 2em;
+    padding-left: 0.5em;
+    border-right: none;
+    border: 1px solid #252526;
+}
+
+/* тело */
+body{
+    z-index:10;
+    overflow-x: hidden;
+}
+canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: rgb(255, 255, 255);
+}
+#page{
+    display: inline-flex;
+    width: 100%;
+    margin-top: 4.3em;
+    margin-bottom: 0.9em;
+
+}
+#page *{
+    z-index: 10;
+}
+#left-column, #right-column{
+    width: 20%;
+    margin: 0.2em;
+    padding: 0.2em;
+    border: 1px dashed #252526;
+}
+#left-column{
+}
+#right-column{
+}
+#center-column{
+    width: 60%;
+    margin: 0.8em 0.6em 0.2em 0.6em;
+    border-bottom: 1px dashed #252526;
+}
+section{
+    z-index:10;
+    pointer-events: all;
+    margin: 1em auto;
+    padding: 1em;
+    width: 100%;
+    border: 1px solid #252526;
+    box-shadow: 1px 1px 0 #fff, 2px 2px 0 #252526;
+    background-color: #fff;
+}
+
+/* список файлов */
+#n_1istbox{
+    z-index:100;
+    transition: .0s;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-left: 1px solid #252526;
+    padding: 0 1em;
+    height: 10em;
+    min-height: 10em;
+    max-height: 20em;
+    resize: vertical;
+}
+#n_1istbox #va1ue{
+    color: #696969;
+}
+
+/* кнопки списка файлов */
+#butt0n{
+    z-index:10;
+    display:flex;
+    width: 100%;
+    box-shadow: 0 1px 0 #252526;
+}
+#butt0n_chs{
+    margin: 0 1em 0 auto;
+    padding: 1em 0 1em 0;
+}
+#butt0n:hover #butt0n_chs::after {
+	content: ' ‹';
+    color: #8b0000;
+}
+#butt0n:hover p {
+    color: #8b0000;
+}
+#butt0n:hover #va1ue {
+    color: #252526;
+}
+#va1ue{
+    color: #6A9955;
+}
+
+/* итог поиска по файлам */
+#comment{
+    margin-top: 0;
+    color: #696969;
+}
+#comment span{
+    color: #6A9955;
+}
+#found{
+    margin-bottom: 0;
+}
+
+/* удаление файлов */
+#fi1e_de1 #form_group{
+    display: flex;
+    width: 100%;
+}
+#fi1e_de1 #submit_button{
+    cursor: pointer;
+    height: 2em;
+    padding: 0.4em;
+    border: 1px solid #252526;
+}
+#fi1e_de1 #submit_button:hover{
+    box-shadow: 1px 0 0 #fff, 2px 0 0 #252526, -1px 0 0 #fff, -2px 0 0 #252526;
+}
+#fi1e_de1 #submit_button:active{
+    box-shadow: 
+    2px 1px 0 #fff, 3px 2px 0 #252526, 
+    -2px -1px 0 #fff, -3px -2px 0 #252526, 
+    2px 1px 0 #fff, 3px 2px 0 #252526, 
+    -2px -1px 0 #fff, -3px -2px 0 #252526;
+}
+#fi1e_de1 #submit_button:active span{
+    color: #8b0000;
+}
+#fi1e_de1 input[type='text']{
+    width: 100%;
+    height: 2em;
+    padding-left: 0.5em;
+    border-right: none;
+    border: 1px solid #252526;
+}
+
+/* загрузка файлов */
+#file_upload, #form_load_group{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+#file_upload span{
+    text-transform: uppercase;
+}
+#file_upload label{
+    justify-content: center;
+    width: 50%;
+    padding: 0.4em;
+    border: 1px solid #252526;
+}
+#file_upload label span::after{
+    content: '  ';
+}
+#file_upload #labl2{
+    right: 0;
+    margin: auto 0 auto auto;
+    text-align: right;
+}
+#file_upload label:hover{
+    box-shadow: 
+    2px 1px 0 #fff, 3px 2px 0 #252526, 
+    -2px -1px 0 #fff, -3px -2px 0 #252526, 
+    2px 1px 0 #fff, 3px 2px 0 #252526, 
+    -2px -1px 0 #fff, -3px -2px 0 #252526;
+}
+#file_upload label:hover span::after{
+	content: ' ‹';
+    margin-left: 0.04em;
+}
+#file_upload label:active span{
+    color: #8b0000;
+}
+
+/* текст ошибок */
+#err0r{
+    z-index:10;
+    color: #8b0000;
+}
+#err0r:hover{
+    box-shadow: 0 1px 0 #252526;
+}
+#err0r:hover::after {
+	content: ' ‹';
+}
+
+/* кастомное выделение текста */
+#fi1e_find *, #fi1e_de1 *{
+    user-select: auto;
+}
+#fi1e_find *::selection, #fi1e_de1 *::selection{
+    background: #ffffff00;
+    color: #8b0000;
+}
+/* карусель */
+#carusel_block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: min-content;
+    padding-top: 0.2em;
+    border: 1px dashed #252526;
+}
+
+#carusel_block *::-webkit-scrollbar{
+    background-color: #ffffff00;
+    border: none;
+    display: hidden;
+}
+#carusel_block *::-webkit-scrollbar-thumb{
+    box-shadow: none;
+    display: hidden;
+}
+#carusel_block *::-webkit-scrollbar-button:single-button:vertical{
+    border: none;
+    display: hidden;
+}
+
+#carusel_block #left_arrow, #carusel_block #right_arrow{
+    border-left: 1px solid #252526;
+    border-top: 1px solid #252526;
+    width: 0.6em;
+    height: 0.6em;
+}
+#carusel_block #left_block{
+    left: 0;
+    margin: auto auto auto 0;
+    padding: 0 0.8em 0 1em;
+}
+#carusel_block #center_block{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+#carusel_block #right_block{
+    right: 0;
+    margin: auto 0 auto auto;
+    padding: 0 1em 0 0.8em;
+}
+#carusel_block #left_arrow{
+    rotate: -45deg;
+}
+#carusel_block #right_arrow{
+    rotate: 135deg;
+}
+
+#carusel_block #center_block img{
+    max-width: 10em;
+    max-height: 10em;
+    margin: 1em;
+}
+
+/* подвал */
+footer{
+    bottom: 0;
+    margin-bottom: 0;
+    width: calc(100% - 1.4em);
+    /* display: inline-flex; */
+}
