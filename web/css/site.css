@@ -86,3 +86,199 @@ a.desc:after {
 .form-group {
     margin-bottom: 1rem;
 }
+
+/* custom elements ------------------------------------------------ */
+body {
+    background-color: #f8f8f8;
+}
+.divider {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #333;
+}
+
+.nav {
+    width: 100%;
+}
+.nav-full {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+.nav-el {
+    display: flex;
+}
+
+.search-in {
+    justify-content: right;
+}
+.product-search {
+    display: flex;
+    font-size: 1em;
+}
+.product-search * {
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    user-select: none;
+    padding: 0.4em;
+    transition: .2s;
+}
+.product-search .search-field {
+    width: 100%;
+    border: 1px solid #eee;
+    border-collapse: collapse;
+}
+.product-search .search-field:focus{
+    border-color: #ff9000;
+}
+.product-search input[type='submit'] {
+    border: 1px solid #ff9000;
+    background-color: #ff9000;
+    color: #fff;
+}
+.product-search input[type='submit']:hover {
+    border-color: #151515;
+    background-color: #151515;
+}
+
+.table-bordered {
+    border-color: #00b060;
+}
+.table-bordered thead th {
+    background-color: #DFDFDF;
+}
+.table-bordered thead th a {
+    text-decoration: none;
+    outline: none;
+    color: #333;
+}
+.table-bordered tbody td a {
+    color: #00b060;
+}
+
+.shop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+.shop * {
+    transition: .3s;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.card {
+    display: flex;
+    overflow-x: hidden;
+    width: 14em;
+    margin: 1em;
+    border: 1px solid #00b060;
+    border-radius: 5px;
+    box-shadow: 0 -3px 0 #00b060, 0 0 2px #c8c8c8b3;
+}
+.card:hover {
+    border-color: #ff9000;
+    box-shadow: 0 -5px 0 #ff9000, 0 0 6px 2px #c8c8c8b3;
+}
+
+.card:hover h2 {
+    background-color: #ff9000;
+}
+.card:hover .cart {
+    color: #ff9000;
+    background-color: #fff;
+    border-color: #ff9000;
+}
+.card:hover .ratings {
+    color: #ff9000;
+}
+
+.card .good {
+    position: relative;
+    height: 14em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card h2 {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    color: #fff;
+    background-color: #00b060;
+}
+.card .cart {
+    text-decoration: none;
+    outline: none;
+    font-size: 0.7em;
+    padding: 0.4em 0.8em;
+    color: #00b060;
+    background-color: #fff;
+    border: 1px solid #00b060;
+    border-left: none;
+}
+.card span {
+    font-size: 0.7em;
+    padding: 0.5em 0.7em;
+}
+.card p {
+    margin: 0;
+    padding: 0.3em 0;
+    font-size: 1em;
+    text-align: center;
+}
+.card .promo-info {
+    width: 100%;
+    height: 3em;
+    background-color: #eee;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+/* .card h2 .btn{
+    background-color: #fff;
+    display:inline-flex;
+    height: max-content;
+} */
+
+.map {
+    width: 100%;
+}
+
+#footer {
+    font-size: 1em;
+    background-color: #101010;
+    color: #ccc;
+}
+
+#footer * {
+    text-decoration: none;
+    outline: none;
+}
+
+#footer h2 {
+    color: #ff9000;
+}
+
+#footer .copy {
+    color: #333;
+}
+#footer .copy a {
+    color: #333;
+}
+
+#footer .vk p{
+    margin-bottom: 0.2em;
+}
+#footer .vk h2 {
+    font-size: 1em;
+}
+#footer .vk .num {
+    font-size: 2em;
+}
+#footer .vk .popd {
+    color: #ff9000;
+}

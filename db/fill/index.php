@@ -53,7 +53,7 @@ try {
     insert($link, $query_insert);
     // null user
     $query_insert = "INSERT INTO `User` (`id`, `id_organization`, `login`, `password`, `name`, `phone`, `squad`, `status`, `email`) 
-    VALUES (NULL, '".$id_org."', 'admin', 'qwerty1ight', 'ivanov ivan ivanovich', '89223334444', 'administrators', '1', 'thebestemail@gmail.com');";
+    VALUES ('-1', '".$id_org."', 'admin', 'admin', 'ivanov ivan ivanovich', '89223334444', 'administrators', '1', 'thebestemail@gmail.com');";
     insert($link, $query_insert, 1);
     // --
     $query_good_list = "SELECT `id` FROM `Good` LIMIT 1;";
@@ -68,7 +68,7 @@ try {
     VALUES (NULL, '".$id_good."', '".$retail."', '".$wholesale."', '".rand(1, 100)."', '".$now."');";
     insert($link, $query_insert);
     // --
-    $query_user_list = "SELECT `id` FROM `User` LIMIT 1;";
+    $query_user_list = "SELECT `id` FROM `User` WHERE `id`!=-1 LIMIT 1;";
     $res = mysqli_query($link, $query_user_list);
     $id_user = mysqli_fetch_assoc($res)['id'];
 
@@ -83,6 +83,23 @@ try {
     $query_insert = "INSERT INTO `Order` (`id`, `id_user`, `id_good`, `datetime`, `price`, `qt`, `status`) 
     VALUES (NULL, '".$id_user."', '".$data_price['id_good']."', '".$now."', '".$price."', '".$qt."', '0');";
     insert($link, $query_insert);
+    // null order
+    function insert_r($link, $data_price, $cnt=10) {
+        while ($cnt > 0) {
+
+            $qt = rand(2, 50);
+            $price = $data_price['wholesale']*$qt;
+            $now = date("Y-m-d H:i:s");
+
+            $query_insert = "INSERT INTO `Order` (`id`, `id_user`, `id_good`, `datetime`, `price`, `qt`, `status`) 
+            VALUES (null, '-1', '".$data_price['id_good']."', '".$now."', '".$price."', '".$qt."', '1');";
+
+            mysqli_query($link, $query_insert);
+            $cnt -= 1;
+        }
+    }
+    
+    insert_r($link, $data_price, 110);
     // --
 
     // output-----------------------------
@@ -115,5 +132,5 @@ try {
     echo '<br>Its work? i think...';
 } catch (\Throwable $th) {
 
-    echo '<br>Nope. Request error, here we go again<br>'.$th;
+    echo '<br>Nope. Request error, here we go again<br><br>'.$th;
 }

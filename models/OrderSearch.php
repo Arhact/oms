@@ -38,7 +38,7 @@ class OrderSearch extends Order
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function search($params, $id_user)
     {
         $query = Order::find();
 
@@ -56,10 +56,14 @@ class OrderSearch extends Order
             return $dataProvider;
         }
 
+        $query->andWhere([
+            'id_user' => $id_user,
+        ]);
+
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'id_user' => $this->id_user,
+            // 'id_user' => $this->id_user,
             'id_good' => $this->id_good,
             'datetime' => $this->datetime,
             'price' => $this->price,

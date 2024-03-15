@@ -6,7 +6,9 @@ use Yii;
 
 use app\models\User;
 use app\models\Regform;
+use app\models\Order;
 use app\models\OrderSearch;
+use app\models\OrderCreateForm;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -53,7 +55,7 @@ class LkController extends Controller
     public function actionIndex()
     {
         $searchModel = new OrderSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        $dataProvider = $searchModel->search($this->request->queryParams, Yii::$app->user->identity->id);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -75,21 +77,20 @@ class LkController extends Controller
     }
 
     /**
-     * Creates a new User model.
+     * Creates a new Order model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Regform();
+        $model = new OrderCreateForm();
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                Yii::$app->user->login($model);
-                return $this->redirect(['/user']);
-            }
-        } else {
-            $model->loadDefaultValues();
+        if ($model->load($this->request->post())) {
+            
+            $model->load($this->request->post());
+            $model->status = 'Новая';
+            $model->save();
+
         }
 
         return $this->render('create', [
@@ -104,18 +105,18 @@ class LkController extends Controller
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id)
-    {
-        $model = $this->findModel($id);
+    // public function actionUpdate($id)
+    // {
+    //     $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
+    //     if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+    //         return $this->redirect(['view', 'id' => $model->id]);
+    //     }
 
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
+    //     return $this->render('update', [
+    //         'model' => $model,
+    //     ]);
+    // }
 
     /**
      * Deletes an existing User model.
@@ -140,7 +141,7 @@ class LkController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = User::findOne(['id' => $id])) !== null) {
+        if (($model = Order::findOne(['id' => $id])) !== null) {
             return $model;
         }
 

@@ -4,19 +4,12 @@
 
 use yii\helpers\Html;
 
-$this->title = 'О нас';
+$key = $_GET['s'];
+$this->title = $key.' - в разработке';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about">
     <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        г. Калининград, ул. Третьяковская, 4В<br>
-        Сервис: 91-34-44<br>
-        Магазин: 91-52-08<br>
-        Детейлинг: 38-51-40<br>
-        E-mail: info@kdmobil.ru<br>
-    </p>
+    <p>открыта страница из файла: <code><?= __FILE__ ?></code></p>
     
-    <!-- <code></?= __FILE__ ?></code> -->
 </div>
