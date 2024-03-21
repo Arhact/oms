@@ -15,6 +15,8 @@ use Yii;
  * @property string $datetime
  *
  * @property Good $good
+ * 
+ * 
  */
 class Price extends \yii\db\ActiveRecord
 {

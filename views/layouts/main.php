@@ -11,8 +11,12 @@ use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
 
-use yii\helpers\ArrayHelper;
-use backend\models\Standard;
+use yii\helpers\Url;
+use app\models\Good;
+/** @var app\models\GoodSearch $searchModel */
+
+// use yii\helpers\ArrayHelper;
+// use backend\models\Standard;
 
 AppAsset::register($this);
 
@@ -59,10 +63,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 ['label' => '8 (4012) 915-208', 'url' => ['#']],
             ];
     if (Yii::$app->user->isGuest) {
-        $items[] = [
-            ['label'=>'Авторизация', 'url'=>['/site/login']],
-            ['label'=>'Регистрация', 'url'=>['/user/create']],
-        ];
+        $items[] = ['label'=>'Авторизация', 'url'=>['/site/login']];
+        $items[] = ['label'=>'Регистрация', 'url'=>['/user/create']];
     }
     else {
         $items[] = ['label'=>'Личный кабинет', 'url'=>['/lk']];

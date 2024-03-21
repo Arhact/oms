@@ -28,6 +28,13 @@ $this->title = 'Главная страница';
     </div>
 
 <?
+    // $data = function ($action, Good $model, $key, $index, $column) {
+    // return Url::toRoute([$action, 'id' => $model->id]);};
+
+    // print_r($data);
+?>
+
+<?
 function devpic($n) {
     switch ($n) {
         case 1:

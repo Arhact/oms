@@ -53,6 +53,20 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 
+    <?php
+
+    $columns = [
+        'name',
+        'about',
+        'qt',
+        'status',
+        'datetime',
+        'term',
+        'price',
+    ]
+    
+    ?>
+
     <?php Pjax::end(); ?>
 
 </div>
